@@ -7,6 +7,7 @@ public class Query {
 	
 	public static void setQuery(String myQuery, String[] socmedCheck) {
 		Query.myQuery = myQuery;
+		
 		Query.socmedCheck = socmedCheck;
 	}
 }
