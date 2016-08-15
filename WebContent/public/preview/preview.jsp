@@ -2,7 +2,7 @@
 
 <%@ page import="saitweet.Query" %>
 
-<div class="content-query" style="border-top: 0"> 
+<div class="content-analysis" style="border-top: 0"> 
 	<div class="container">
 	
 		<div id="intro">
