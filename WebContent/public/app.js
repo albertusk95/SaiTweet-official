@@ -15,7 +15,9 @@ var app = angular.module('saitweet', [
 //main home
 var primary = angular.module('mainhome', [
 	'ngRoute',
-	'preview'
+	'preview',
+	'link2',
+	'link3'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
