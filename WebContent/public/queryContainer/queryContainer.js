@@ -1,6 +1,3 @@
-// the previous selected query type (#hashtag, @account, keyword, etc)
-var prevQueryID = 0;
-
 angular.module('queryContainer', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -10,7 +7,7 @@ angular.module('queryContainer', ['ngRoute'])
 	});
 }])
 
-.controller('queryContainer_Ctrl', ['$scope', '$http', '$window', function($scope, $http, $window) {
+.controller('queryContainer_Ctrl', ['$scope', function($scope) {
 	console.log("queryContainer controller...");
 	
 	// default value of queryPlaceholder
@@ -42,6 +39,7 @@ angular.module('queryContainer', ['ngRoute'])
 	};
 	
 	// send data
+	/*
 	$scope.msg = "send";
 	
 	$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
@@ -51,7 +49,7 @@ angular.module('queryContainer', ['ngRoute'])
 		console.log("sending post...");
 			
         $http({
-            url : 'test',
+            url : '#/primary',
             method : "POST",
             data : {
                 'query' : $scope.query
@@ -63,9 +61,9 @@ angular.module('queryContainer', ['ngRoute'])
             
             //$scope.message = response.data;
             
-            $window.localStorage.setItem("queryDetails", JSON.stringify(response.data));
+            //$window.localStorage.setItem("queryDetails", JSON.stringify(response.data));
             //$window.location = "http://localhost:8080/SaiTweet/test.jsp";
-            $window.location = "#/test";
+            $window.location = "#/primary";
             
         }, function(response) {
             //fail case
@@ -73,8 +71,8 @@ angular.module('queryContainer', ['ngRoute'])
             console.log("fail posting data");
             $scope.message = response;
         });
- 
-    };
+	};
+	*/
 	
 }]);
 

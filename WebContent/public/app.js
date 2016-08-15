@@ -1,9 +1,9 @@
+// pre home
 var app = angular.module('saitweet', [
     'ngRoute',
     'queryContainer',
 	'whatisit',
-	'contact',
-	'test'
+	'contact'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -11,3 +11,16 @@ var app = angular.module('saitweet', [
         redirectTo: '/queryContainer'
     });
 }]);
+
+//main home
+var primary = angular.module('mainhome', [
+	'ngRoute',
+	'preview'
+])
+
+.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.otherwise({
+		redirectTo: '/preview'
+	});
+}]);
+

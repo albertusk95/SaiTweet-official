@@ -17,98 +17,90 @@
 			</div>
 		</div>
 		
-		<div id="query-text">
-			<div class="text-center wrap_title">
-				<!-- <form action="#" method="post"> -->
-				<form>
-					<span class="inputWithButton">
-						<input type="text" ng-model="query" ng-attr-placeholder="{{ queryPlaceholder }}" name="query" id="query">
-						<button type="submit" id="btn-search" ng-click="sendPost()"><b>Search</b></button>
-					</span>
-				</form>   
-			</div>
-		</div>
+		<div id="query-master">
 		
-		<div id="social-media">
-			<!-- hashtag -->
-			<div id="twitter-fb-checkbox" ng-show="activeMenu === 0">
-				
-				<div class="container">
-					<div class="row">
-					
-						<div class="col-md-5 text-right">
-							<!-- <label class="checkbox-inline"> -->
-								<input type="checkbox" checked="checked" name="twt_check" id="twt_check">
-								<span class="fa-stack fa-2x">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-								</span>			
-							<!-- </label> -->
-						</div>
-						
-						<div class="col-md-2"></div>
-						
-						<div class="col-md-5 text-left">
-							<!-- <label class="checkbox-inline"> -->
-								<input type="checkbox" name="fb_check" id="fb_check">
-								<span class="fa-stack fa-2x">
-									<i class="fa fa-square fa-stack-2x"></i>
-									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-								</span>
-							<!-- </label> -->
-						</div>
+			<form action="primary.jsp" method="post">
+				<div id="query-text">
+					<div class="text-center wrap_title">
+						<span class="inputWithButton">
+							<input type="text" ng-model="query" ng-attr-placeholder="{{ queryPlaceholder }}" name="query" id="query">
+							<button type="submit" id="btn-search"><b>Hello</b></button>
+						</span>   
 					</div>
 				</div>
 				
-			</div>
-			
-			<!-- account -->
-			<div id="twitter-fb-radio" ng-show="activeMenu === 1">
-				
-				<div class="container">
-					<div class="row">
-					
-						<div class="col-md-5 text-right">
-							<!--<label class="radio-inline">-->
-								<input type="radio" checked="checked" name="twt_fb_radio" id="twt_radio">							
-									<span class="fa-stack fa-2x">
-										<i class="fa fa-circle fa-stack-2x"></i>
-										<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-									</span>			
-							<!--</label>-->
+				<div id="social-media">
+					<!-- hashtag -->
+					<div id="twitter-fb-checkbox" ng-show="activeMenu === 0">
+						
+						<div class="container">
+							<div class="row">
+							
+								<div class="col-md-5 text-right">
+									<!-- <label class="checkbox-inline"> -->
+										<input type="checkbox" checked="checked" name="socmed_check" id="twt_check" value="TwitterCheck">
+										<span class="fa-stack fa-2x">
+											<i class="fa fa-circle fa-stack-2x"></i>
+											<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+										</span>			
+									<!-- </label> -->
+								</div>
+								
+								<div class="col-md-2"></div>
+								
+								<div class="col-md-5 text-left">
+									<!-- <label class="checkbox-inline"> -->
+										<input type="checkbox" name="socmed_check" id="fb_check" value="FacebookCheck">
+										<span class="fa-stack fa-2x">
+											<i class="fa fa-square fa-stack-2x"></i>
+											<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+										</span>
+									<!-- </label> -->
+								</div>
+							</div>
 						</div>
 						
-						<div class="col-md-2"></div>
-						
-						<div class="col-md-5 text-left">
-							<!--<label class="radio-inline">-->
-								<input type="radio" name="twt_fb_radio" id="fb_radio">								
-								<span class="fa-stack fa-2x">
-									<i class="fa fa-square fa-stack-2x"></i>
-									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-								</span>
-							<!--</label>-->
-						</div>
 					</div>
+					
+					<!-- account -->
+					<div id="twitter-fb-radio" ng-show="activeMenu === 1">
+						
+						<div class="container">
+							<div class="row">
+							
+								<div class="col-md-5 text-right">
+									<!--<label class="radio-inline">-->
+										<input type="radio" checked="checked" name="socmed_radio" id="twt_radio" value="TwitterRadio">							
+											<span class="fa-stack fa-2x">
+												<i class="fa fa-circle fa-stack-2x"></i>
+												<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+											</span>			
+									<!--</label>-->
+								</div>
+								
+								<div class="col-md-2"></div>
+								
+								<div class="col-md-5 text-left">
+									<!--<label class="radio-inline">-->
+										<input type="radio" name="socmed_radio" id="fb_radio" value="FacebookRadio">								
+										<span class="fa-stack fa-2x">
+											<i class="fa fa-square fa-stack-2x"></i>
+											<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+										</span>
+									<!--</label>-->
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+					<!-- keyword -->
+					<div ng-show="activeMenu === 2">
+						this is my keyword
+					</div>
+					
 				</div>
-				
-			</div>
-			
-			<!-- keyword -->
-			<div ng-show="activeMenu === 2">
-				this is my keyword
-			</div>
-			
-			<!-- mention -->
-			<div ng-show="activeMenu === 3">
-				this is my mention
-			</div>
-			
-			<!-- url -->
-			<div ng-show="activeMenu === 4">
-				this is my url
-			</div>
+			</form>
 		</div>
-			
 	</div>
 </div>
