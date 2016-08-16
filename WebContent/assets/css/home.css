@@ -50,11 +50,25 @@
 	padding-top:100px;
 }
 
+/*
+#navbarVertical li a{
+	overflow: auto;
+}
+*/
+
+.selectedView {
+	margin-left:25%;
+	padding:1px 16px;
+	height:1000px;
+}
+
 .navbar-fixed-left {
   width: 140px;
   position: fixed;
   border-radius: 0;
   height: 100%;
+  
+  overflow: auto
 }
 
 .navbar-fixed-left .navbar-nav > li {
@@ -228,4 +242,41 @@ input, button {
 	margin-left:25%;
 	padding:1px 16px;
 	height:1000px;
+}
+
+/* TWEET CONTAINER */
+.testTweet {
+	padding-left: 400px;
+	padding-right: 180px;
+	padding-top: 170px;
+}
+
+.tweetContainer {
+	border-radius: 15px;
+	background-color: #ffffff;
+	margin-bottom: 90px;
+	display: table;
+}
+
+/*
+.userIMG {
+	width: 10px;
+}
+
+.userFullname, .userUsername {
+	width: 70px;
+	height: 50px;
+}
+
+.userText {
+	font-family: 'Oswald', sans-serif;
+	font-size: 24px;
+}
+*/
+
+td, th {
+	padding-top: 30px;
+	padding-right: 9px;
+	padding-bottom: 9px;
+	padding-left: 9px;
 }

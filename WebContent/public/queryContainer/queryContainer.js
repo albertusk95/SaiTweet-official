@@ -40,30 +40,34 @@ angular.module('queryContainer', ['ngRoute'])
 	
 	// send data
 	/*
-	$scope.msg = "send";
-	
 	$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
    
+	$scope.resArr = [];
+	
     $scope.sendPost = function() {
 		
 		console.log("sending post...");
 			
         $http({
-            url : '#/primary',
+            url : 'formservice',
             method : "POST",
             data : {
-                'query' : $scope.query
+                'query' : $scope.query,
+                'socmed_twt' : $scope.twt_chk,
+                'socmed_fb' : $scope.fb_chk
             }
         }).then(function(response) {
         	console.log("this is the data");
             console.log(response.data);
             console.log("success posting data");
             
+            $scope.resArr = response.data;
+            
             //$scope.message = response.data;
             
             //$window.localStorage.setItem("queryDetails", JSON.stringify(response.data));
             //$window.location = "http://localhost:8080/SaiTweet/test.jsp";
-            $window.location = "#/primary";
+            //$window.location = "#/primary";
             
         }, function(response) {
             //fail case

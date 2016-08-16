@@ -6,7 +6,7 @@
 	<div class="container">
 	
 		<div id="intro">
-			This is link 3 page
+			This is link 3 page This is link 3 page This is link 3 page
 		</div>
 	</div>
 </div>
