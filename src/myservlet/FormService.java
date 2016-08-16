@@ -51,22 +51,24 @@ public class FormService extends HttpServlet {
         //response.setCharacterEncoding("utf-8");
 	       
 		// query text
-		//String query = request.getParameter("query");
+		String query = request.getParameter("query");
 		
 		// checkbox value
-		//String[] socmedCheck = request.getParameterValues("socmed_check");
+		String[] socmedCheck = request.getParameterValues("socmed_check");
 		
 		// set query and chosen social media as global value
-		//Query.setQuery(query, socmedCheck);
+		Query.setQuery(query, socmedCheck);
 		
 		// extract Twitter data
-		/*
+		
 		try {
+			//Tweet.clearList();
 			Tweet.extractTweet(query);
+			//Tweet.setTweetText();
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
-		*/
+		
 		
 		// debugging
 		System.out.println("HELLO DOPOST");
