@@ -10,9 +10,9 @@
 <div id="analysis_navbar" class="navbar navbar-custom navbar-fixed-left">
 	
 	<ul id="navbarVertical" class="nav navbar-nav">
-		<li><a ng-class="{'active': selectedView === 0}" ng-click="setView(0)">DASHBOARD</a></li>
-		<li><a ng-class="{'active': selectedView === 1}" ng-click="setView(1)">TWEETS</a></li>
-		<li><a ng-class="{'active': selectedView === 2}" ng-click="setView(2)">SENTIMENT</a></li>
+		<li><a ng-class="{'activePrimary': selectedView === 0}" ng-click="setView(0)">DASHBOARD</a></li>
+		<li><a ng-class="{'activePrimary': selectedView === 1}" ng-click="setView(1)">TWEETS</a></li>
+		<li><a ng-class="{'activePrimary': selectedView === 2}" ng-click="setView(2)">SENTIMENT</a></li>
 	</ul>
 
 </div>
@@ -42,8 +42,15 @@
 <!-- Tweet container -->
 <div class="testTweet" ng-show="selectedView === 2">
  
-		<c:forEach items="<%= Tweet.qrTweets %>" var="item">
-			<!-- Spesific tweet container -->
+		<c:set var="tweetNum" value="<%= Tweet.qrTweets.size() %>" />
+		
+		<div class="tweetContainer">
+			<h1>TweetNum is <c:out value="${tweetNum}" /></h1>
+		</div>
+		
+		
+		<c:forEach var="item" items="<%= Tweet.qrTweets %>" varStatus="loop">
+			
 			<div class="tweetContainer">
 				
 				<!-- 
@@ -55,14 +62,16 @@
 				  		<tr>
 				    		<!-- user image profile -->
 				      		<th rowspan="2" class="userIMG" style="width: 15%; border:1px solid grey;">
-				      			
+				      		
 				      			<img src="${item.getUser().getProfileImageURL()}" style="display: block; width: 100%; height: 100%" />
 				      		
 				      		</th>
 				      		
 				      		<!-- user full name -->
 				      		<th class="userFullname" style="width: 85%;">
+				      			
 				      			<c:out value="${item.getUser().getName()}" />
+				      			
 				      		</th>
 				    	</tr>
 					    <tr>
@@ -75,16 +84,24 @@
 				  	<tbody>
 				    	<tr>
 				      		<td colspan="2" class="userText" style="max-width:700px; word-wrap:break-word;">
-				      			
 				      			<c:out value="${item.getText()}" />
-				      		
 				      		</td>
 				    	</tr>
 				  	</tbody>
 				</table>
 			
 			</div>
-				
+			
+			<!-- DETAIL BUTTON -->
+			
+			<div class="detailButtonContainer" ng-click="showDetails(${loop.index})">
+				<b>Show details</b>
+			</div>
+			
+			<div id="${loop.index}" style="display: none; margin-bottom: 100px;">
+	            
+	     	</div>
+		
 		</c:forEach>
 		
 </div>
