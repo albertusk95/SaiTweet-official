@@ -40,12 +40,13 @@ public class Tweet {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 		
 		
+		
 		Twitter twitter = new TwitterFactory(cb.build()).getInstance();
 		
 		//List<String> result = new LinkedList<String>();
 		
 		Query query = new Query(tweet+" +exclude:retweets");
-		query.setCount(3); 	// set tweets per page to 3
+		query.setCount(2); 	// set tweets per page to 2
 		query.setLang("en");
 		
 		QueryResult qr = twitter.search(query);
